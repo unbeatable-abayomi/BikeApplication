@@ -1,0 +1,52 @@
+﻿@model BikeApplication.Models.ViewModels.ModelViewModel 
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<hr />
+<h2 class="text-info mt-5">Add Make of Vehicle</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <div class="col-2">
+                    <label asp-for="Makes" class="control-label"></label>
+                </div>
+                <div class="col-4">
+                    <select asp-for="Model.MakeFK" asp-items="Model.CSelectListItem(Model.Makes)" class="form-control"></select>
+                </div>
+            </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="Model.Name" class="control-label"></label>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Model.Name" class="form-control" />
+                        @*<span asp-validation-for="Name" class="text-danger"></span>*@
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+
+                    <input type="submit" value="Create" class="btn btn-primary" />
+
+                    <a asp-action="Index" class="btn btn-success">Back</a>
+
+
+
+
+                </div>
+</form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
